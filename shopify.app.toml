@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "node-app"
+client_id = "caad8583e7d657e486fc76d5784dff9f"
+application_url = "https://233dae2eda86.ngrok.app"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://233dae2eda86.ngrok.app/auth/callback",
+  "https://233dae2eda86.ngrok.app/auth/shopify/callback",
+  "https://233dae2eda86.ngrok.app/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "keep3-app-development.myshopify.com"
