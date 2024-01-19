@@ -4,6 +4,16 @@ import { DeliveryMethod } from "@shopify/shopify-api";
  * @type {{[key: string]: import("@shopify/shopify-api").WebhookHandler}}
  */
 export default {
+  PRODUCTS_UPDATE: {
+    deliveryMethod: DeliveryMethod.Http,
+    callbackUrl: "/api/webhooks",
+    callback: async (topic, shop, body, webhookId) => {
+      console.log('--- Product update ---');
+      const payload = JSON.parse(body);
+      console.log(payload);
+      console.log('--- /Product update ---');
+    },
+  },
   /**
    * Customers can request their data from a store owner. When this happens,
    * Shopify invokes this privacy webhook.
